@@ -1,11 +1,38 @@
-{% extends 'base/base.html' %} {% block 'body'%}
-<h1>Welcome to {{name}}!</h1>
-{% endblock %} {% block 'footer' %}
-<footer class="mt-auto text-white-50">
+{% extends 'base/base.html' %} {% load static %} {% block 'body'%}
+
+<div class="d-flex h-100 text-center text-white index">
+  <video autoplay muted loop id="myVideo">
+    <source src="{% static 'videos/bg.mp4' %}" type="video/mp4" />
+  </video>
+  <div class="d-flex w-100 h-100 p-3 mx-auto flex-column main-content">
+    <header class="mb-auto">
+      <div>
+        <h3 class="float-md-start mb-0">CarVibe</h3>
+        <nav class="nav nav-masthead justify-content-center float-md-end">
+          <a class="nav-link active" aria-current="page" href="">Home</a>
+          <a class="nav-link" href="">Login</a>
+        </nav>
+      </div>
+    </header>
+     <main class="px-3">
+            <h2>Find a deal near you!</h2>
+            <p class="lead">Looking to buy or sell a used car? We've got you
+                covered. </br> AutoMax is the leading used car marketplace.</p>
+            <p class="lead">
+                <a href=""
+                    class="btn btn-lg btn-secondary fw-bold border-white bg-white">Register</a>
+            </p>
+     </main>
+     <footer class="mt-auto text-white-50">
   <p>
-    Copyright © 2025 <a href="" class="text-white">CarVibe</a> by
+    Copyright © {% now 'Y' %} <a href="https://github.com/tejth/CarVibe" class="text-white">CarVibe</a> by
     <a href="https://tejth-v1.netlify.app/" class="text-white">tejth </a>
   </p>
+
+  </div>
+</div>
+{% endblock %} {% block 'footer' %}
+
 
   {% endblock %}
 </footer>
