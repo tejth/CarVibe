@@ -18,7 +18,15 @@
   </head>
 
   <body>
-    {% block 'body'%} {% endblock %}
+    {% if messages %}
+    {% for message in messages %}
+      <div>
+        {{ message }}
+      </div>
+    {% endfor %}
+    {% endif %}
+    {% block 'body'%} 
+    {% endblock %}
   </body>
 
   {% block 'footer' %}

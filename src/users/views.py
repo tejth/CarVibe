@@ -2,6 +2,7 @@ from django.shortcuts import redirect, render
 from django.shortcuts import render
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate, login
+from django.contrib import messages
 # Create your views here.
 
 def login_view(request):
@@ -13,6 +14,7 @@ def login_view(request):
             user = authenticate(username=username, password=password)
             if user is not None:
                 login(request,user)
+                messages.success(request, f'You are now logged in as {username}')
                 return redirect('home')
             else:
                 pass
