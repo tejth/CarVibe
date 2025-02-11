@@ -19,10 +19,12 @@ from django.urls import include, path
 from django.conf.urls.static import static
 from main import urls as main_app_urls
 from django.conf import settings
+from users import urls as user_app_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(main_app_urls)),
+    path('', include(user_app_urls)),
 ]
 
 if settings.DEBUG:
