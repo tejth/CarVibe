@@ -43,5 +43,4 @@ class RegisterView(View):
         else:
             messages.error(request, f'An error occurred trying to register!')
             return render(request , 'views/register.html',{'register_form':register_form})
-    
-            
+
