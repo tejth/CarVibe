@@ -17,11 +17,12 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
   </head>
 
-  <body>
+  <body>    
     {% if messages %}
     {% for message in messages %}
-      <div>
-        {{ message }}
+      <div {% if message.tags %} class="alert alert-{{message.tags}}" {% endif %}>
+        {{ message }} - 
+        {{ messages.tags }}
       </div>
     {% endfor %}
     {% endif %}
