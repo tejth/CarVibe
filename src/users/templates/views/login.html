@@ -11,6 +11,7 @@
         width=""
         height="90"
       />
+      {% csrf_token %}
       {{ login_form|crispy}}
       <button class="w-100 btn btn-lg btn-danger" type="submit">Sign In</button>
       <p class="mt-5 mb-3 text-muted">Copyright © 2025 Carvibe</p>
