@@ -4,6 +4,7 @@ CARS_BRANDS = (
     ('maruti suzuki' , 'Maruti Suzuki'),
     ('tata','Tata'),
     ('ford','Ford'),
+    ('volkswagon','Volkswagon'),
     ('hyundai','Hyundai'),
     ('mahindra','Mahindra'),
     ('nissan','Nissan'),
