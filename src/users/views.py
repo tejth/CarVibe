@@ -5,6 +5,7 @@ from django.contrib.auth import authenticate, login , logout
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.views import View
+from django.utils.decorators import method_decorator
 # Create your views here.
 
 def login_view(request):
@@ -49,3 +50,9 @@ class RegisterView(View):
             messages.error(request, f'An error occurred trying to register!')
             return render(request , 'views/register.html',{'register_form':register_form})
 
+@method_decorator(login_required, name='dispatch')
+class ProfileView(View):
+    
+    
+    def get(self,request):
+        return render(request, 'views/profile.html',{})
