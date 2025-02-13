@@ -3,6 +3,9 @@ from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 
 from main.models import Listing
+from .forms import ListingForm
+
+from users.forms import LocationForm
 # Create your views here.
 
 def main_view(request):
@@ -22,6 +25,7 @@ def list_view(request):
     if request.method=='POST':
         pass
     elif request.method =='GET':
-        pass
-    return render(request , 'views/list.html',{})
+        listing_form = ListingForm()
+        location_form = LocationForm()
+    return render(request , 'views/list.html',{'listing_form': listing_form, 'location_form': location_form,})
 
