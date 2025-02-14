@@ -38,4 +38,65 @@ Welcome to the **Car Listing Web Application**! This is a fully functional web a
 1. Python 3.x installed.
 2. Django installed. You can install it via pip:
    ```bash
-   pip install django
+   pip install django                                                                                                          
+3. Clone the repository: If you haven't already cloned the repository, use 
+    this command:
+      ```bash
+   git clone <repository_url>
+   cd <project_directory>
+
+4. Set up a Virtual Environment (optional but recommended):
+    ```bash
+   python -m venv venv
+
+5. Activate Virtual Environment
+    ```bash                                                           
+   venv\Scripts\activate
+6. Set up your database: Run the following command to apply database 
+   migrations:
+    ```bash
+   python manage.py migrate                                                  
+7. Create a superuser (optional): If you want to access the Django admin 
+   panel, you can create a superuser:
+     ```bash
+   python manage.py createsuperuser
+
+## Folder Structure
+car_listing_app/
+│
+├── car_listing_app/
+│   ├── __init__.py
+│   ├── settings.py
+│   ├── urls.py
+│   ├── wsgi.py
+│   └── asgi.py
+│
+├── listings/
+│   ├── __init__.py
+│   ├── models.py
+│   ├── views.py
+│   ├── forms.py
+│   ├── urls.py
+│   └── migrations/
+│
+├── templates/
+│   ├── base.html
+│   ├── home.html
+│   ├── listing_detail.html
+│   └── ...
+│
+├── static/
+│   ├── css/
+│   ├── js/
+│   └── images/
+│
+├── manage.py
+└── requirements.txt
+
+
+
+  
+
+  
+                                      
+  
