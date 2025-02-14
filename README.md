@@ -60,41 +60,6 @@ Welcome to the **Car Listing Web Application**! This is a fully functional web a
    panel, you can create a superuser:
      ```bash
    python manage.py createsuperuser
-
-## Folder Structure
-car_listing_app/
-│
-├── car_listing_app/
-│   ├── __init__.py
-│   ├── settings.py
-│   ├── urls.py
-│   ├── wsgi.py
-│   └── asgi.py
-│
-├── listings/
-│   ├── __init__.py
-│   ├── models.py
-│   ├── views.py
-│   ├── forms.py
-│   ├── urls.py
-│   └── migrations/
-│
-├── templates/
-│   ├── base.html
-│   ├── home.html
-│   ├── listing_detail.html
-│   └── ...
-│
-├── static/
-│   ├── css/
-│   ├── js/
-│   └── images/
-│
-├── manage.py
-└── requirements.txt
-
-
-
   
 
   
