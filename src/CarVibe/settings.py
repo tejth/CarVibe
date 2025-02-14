@@ -1,4 +1,5 @@
 import os
+import environ
 """
 Django settings for CarVibe project.
 
@@ -14,6 +15,12 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 from pathlib import Path
 from django.contrib.messages import constants as messages
 
+
+#Initialize Environ
+env = environ.Env()
+env.read_env()
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -22,10 +29,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-w*+w5&8$%j(umin19m(9z8fhj*ppi3ovrlya57e^@$y$zbe&zu'
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = bool(env('DEBUG'))
 
 ALLOWED_HOSTS = ["*"]
 
