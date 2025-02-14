@@ -3,6 +3,7 @@ from django.db import models
 from .models import Location , Profile
 from localflavor.us.forms import USZipCodeField
 from django.contrib.auth.models import User
+from .widgets import CustomPictureImageFieldWidget
 
 class UserForm(forms.ModelForm):
     username = forms.CharField(disabled=True)
@@ -13,7 +14,8 @@ class UserForm(forms.ModelForm):
 
 
 class ProfileForm(forms.ModelForm):
-    
+    photo = forms.ImageField(widget=CustomPictureImageFieldWidget)
+    bio = forms.TextInput()
     class Meta:
         model =Profile
         fields = ('photo','bio','phone_number')
