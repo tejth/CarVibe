@@ -16,7 +16,7 @@
                 <div class="btn-group">
                   <a type="button" class="btn btn-sm btn-outline-secondary" href="{% url 'listing' id=listing.id %}">View</a>
                   {% if listing.seller.user == request.user  %}
-                    <a href="" type="button" class="btn btn-sm btn-outline-secondary">Edit</a>
+                    <a href="{% url 'edit' id=listing.id %}" type="button" class="btn btn-sm btn-outline-secondary">Edit</a>
                   {% endif %}
                 </div>
                 <small class="text-muted m-2">{{listing.updated_at}}</small>
