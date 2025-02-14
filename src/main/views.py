@@ -1,9 +1,9 @@
-from django.shortcuts import redirect, render
-from django.http import HttpResponse
+from django.shortcuts import redirect, render , get_object_or_404
+from django.http import HttpResponse, JsonResponse
 from django.contrib.auth.decorators import login_required
 from django.views import View
 from django.contrib import messages
-from main.models import Listing
+from main.models import LikedListing, Listing
 from .forms import ListingForm
 from users.forms import LocationForm
 from .filters import ListingFilter
@@ -79,3 +79,18 @@ def edit_view(request, id):
     except Listing.DoesNotExist:
         messages.error(request, f'Listing with id {id} does not exist!')
         return redirect('home')
+
+@login_required
+def like_listing_view(request, id ):
+    listing = get_object_or_404(Listing , id =id)
+    
+    liked_listing, created = LikedListing.objects.get_or_create(profile=request.user.profile, listing = listing)
+    
+    if not created:
+        liked_listing.delete()    
+    else:
+        liked_listing.save()
+    
+    return JsonResponse({
+        'is_liked_by_user':created,
+    })
